@@ -1,0 +1,18 @@
+#!/bin/bash
+N=2000000000
+SEED=132002070
+RANDOM=$SEED
+
+cat <<EOF
+#==================================================================
+# generator bashRANDOM  seed = $SEED
+#==================================================================
+type: d
+count: $N
+numbit: 32
+EOF
+
+for (( i=0; i<=$N; i++ ))
+do
+    printf "%10d\n" $(( RANDOM <<16 | RANDOM ))
+done
