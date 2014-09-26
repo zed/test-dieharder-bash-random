@@ -1,0 +1,6 @@
+#!/bin/bash
+# decimal -> hex -> binary (bytes)
+while printf "%x\n" $(( RANDOM <<16 | RANDOM )) | xxd -r -p
+do
+    :
+done

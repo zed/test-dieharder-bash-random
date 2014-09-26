@@ -2,9 +2,12 @@
 INPUT := /tmp/dieharder.input
 PYTHON3 := python3
 
-.PHONY: test test-python
+.PHONY: test test-file test-python
 
-test: $(INPUT)
+test: generate-dieharder-binary
+	./$< | pv | dieharder -a -g 200
+
+test-file: $(INPUT)
 	dieharder -a -f $<  -g 202
 
 test-python: generate-dieharder.py
