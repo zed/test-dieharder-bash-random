@@ -2,4 +2,4 @@
 # decimal -> binary (bytes), see
 # http://unix.stackexchange.com/questions/157648/how-to-convert-an-unsigned-decimal-less-than-132-to-4-bytes-binary-in-bash
 while echo $(( RANDOM << 17 | RANDOM << 2 | RANDOM >> 13 )); do :; done |
-perl -ne 'print pack "I>"'
+perl -ne 'print pack "I>", $_'
