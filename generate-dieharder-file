@@ -1,6 +1,6 @@
 #!/bin/bash
 N=2000000000
-SEED=132002070
+SEED=32749
 RANDOM=$SEED
 
 cat <<EOF
@@ -9,10 +9,10 @@ cat <<EOF
 #==================================================================
 type: d
 count: $N
-numbit: 32
+numbit: 30
 EOF
 
 for (( i=0; i<=$N; i++ ))
 do
-    printf "%10d\n" $(( RANDOM <<16 | RANDOM ))
+    printf "%10d\n" $(( RANDOM <<15 | RANDOM ))
 done
