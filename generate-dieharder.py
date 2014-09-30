@@ -26,8 +26,6 @@ numbit: {numbit}""".format_map(vars()))
     for _ in range(N):
         print("%10d" % gen())
 else: # infinite binary stream
-    import os
-    import sys
     write = sys.stdout.buffer.write
     while True:
         write(R.getrandbits(32).to_bytes(4, 'big'))
